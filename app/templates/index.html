@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="jumbotron">
+        <h1>Welcome to Gemini Bank</h1>
+        <p>Your trusted partner in modern, AI-powered banking.</p>
+        <p>
+            <a class="btn btn-primary" href="{{ url_for('main.register') }}">Open an Account</a>
+            <a class="btn btn-secondary" href="{{ url_for('main.login') }}">Login</a>
+            <a class="btn btn-secondary" href="{{ url_for('main.dashboard') }}">Dashboard</a>
+            <a class="btn btn-secondary" href="{{ url_for('main.transaction') }}">Transactions</a>
+            <a class="btn btn-secondary" href="{{ url_for('main.statement') }}">Statement</a>
+            <a class="btn btn-secondary" href="{{ url_for('main.apply_loan') }}">Apply for Loan</a>
+            <a class="btn btn-secondary" href="{{ url_for('main.offers') }}">AI Offers</a>
+            <a class="btn btn-secondary" href="{{ url_for('main.logout') }}">Logout</a>
+        </p>
+    </div>
+{% endblock %}

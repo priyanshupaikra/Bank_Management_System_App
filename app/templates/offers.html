@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Your Personal AI Financial Assistant</h2>
+    <p>Ask a question about your finances or account activity.</p>
+    
+    <div class="form-wrapper">
+        <form method="POST" action="">
+            <div class="form-group">
+                <label for="question">Your Question:</label>
+                <textarea name="question" id="question" class="form-control" rows="4" placeholder="e.g., What was my largest expense this month? or Should I invest in stocks?"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Ask Gemini</button>
+            </div>
+        </form>
+    </div>
+
+    {% if gemini_answer %}
+    <div class="offers-card" style="margin-top: 2rem;">
+        <h4>Your Question:</h4>
+        <p><em>{{ form_question }}</em></p>
+        <hr>
+        <h4>Gemini's Answer:</h4>
+        <pre>{{ gemini_answer }}</pre>
+    </div>
+    {% endif %}
+
+{% endblock content %}

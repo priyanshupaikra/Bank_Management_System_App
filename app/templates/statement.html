@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Account Statement</h2>
+    <div class="export-buttons" style="margin-bottom: 1rem;">
+        <a href="{{ url_for('main.export', format='csv') }}" class="btn btn-secondary">Export as CSV</a>
+        <a href="{{ url_for('main.export', format='excel') }}" class="btn btn-secondary">Export as Excel</a>
+    </div>
+    <table class="statement-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in transactions %}
+            <tr>
+                <td>{{ t.timestamp.strftime('%Y-%m-%d %H:%M') }}</td>
+                <td>{{ t.description }}</td>
+                <td>{{ t.type }}</td>
+                <td class="{{ 'text-success' if t.amount > 0 else 'text-danger' }}">${{ "%.2f"|format(t.amount) }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="4">No transactions found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

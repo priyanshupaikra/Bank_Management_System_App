@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f9;
+    color: #000000;
+}
+/* Make the body a flex container that takes up the full screen height */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Make the main content area grow to fill any available space */
+main.container {
+    flex-grow: 1;
+}
+.container {
+    width: 80%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+nav {
+    background: #000000;
+    color: #fff;
+    padding: 1rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+nav .nav-brand { font-size: 1.5rem; font-weight: bold; }
+.alert { padding: 1rem; margin-bottom: 1rem; border-radius: 5px; }
+.alert-success { background-color: #d4edda; color: #155724; }
+.alert-danger { background-color: #f8d7da; color: #721c24; }
+.alert-info { background-color: #d1ecf1; color: #0c5460; }
+.form-wrapper { border: 1px solid #ddd; padding: 2rem; margin-top: 2rem; border-radius: 5px; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; }
+.form-control { width: 95%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 5px; }
+.btn { padding: 0.75rem 1.5rem; border: none; border-radius: 5px; cursor: pointer; color: #fff; }
+.btn-primary { background-color: #007bff; }
+.btn-secondary { background-color: #6c757d; }
+.btn-success { background-color: #28a745; }
+.btn-warning { background-color: #ffc107; }
+.transaction-container { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.statement-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+.statement-table th, .statement-table td { border: 1px solid #ddd; padding: 0.8rem; text-align: left; }
+.text-success { color: green; }
+.text-danger { color: red; }
+pre { white-space: pre-wrap; word-wrap: break-word; font-family: inherit; font-size: 1rem; }
+footer { text-align: center; padding: 2rem; background: #000000; color: #fff; margin-top: 2rem; }

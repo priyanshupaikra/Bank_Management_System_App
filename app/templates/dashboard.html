@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Welcome back, {{ current_user.username }}!</h2>
+    <div class="account-summary">
+        <h3>Your Accounts</h3>
+        {% for account in accounts %}
+        <div class="account-card">
+            <h4>{{ account.account_type }} Account</h4>
+            <p>Account Number: {{ account.account_number }}</p>
+            <p class="balance">Balance: ${{ account.balance }}</p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

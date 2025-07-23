@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Perform a Transaction</h2>
+    <div class="transaction-container">
+        <div class="form-wrapper">
+            <form method="POST" action="">
+                {{ transaction_form.hidden_tag() }}
+                <fieldset>
+                    <legend>Deposit or Withdraw</legend>
+                    <div class="form-group">
+                        {{ transaction_form.amount.label }}
+                        {{ transaction_form.amount(class="form-control", placeholder="0.00") }}
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    {{ transaction_form.submit_deposit(class="btn btn-success") }}
+                    {{ transaction_form.submit_withdraw(class="btn btn-warning") }}
+                </div>
+            </form>
+        </div>
+
+        <div class="form-wrapper">
+            <form method="POST" action="">
+                {{ transfer_form.hidden_tag() }}
+                <fieldset>
+                    <legend>Transfer Funds</legend>
+                    <div class="form-group">
+                        {{ transfer_form.recipient_account.label }}
+                        {{ transfer_form.recipient_account(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ transfer_form.amount.label }}
+                        {{ transfer_form.amount(class="form-control", placeholder="0.00") }}
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    {{ transfer_form.submit_transfer(class="btn btn-primary") }}
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

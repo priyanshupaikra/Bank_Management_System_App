@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="form-wrapper">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset>
+                <legend>Apply for a Loan</legend>
+                <div class="form-group">
+                    {{ form.amount.label(class="form-control-label") }}
+                    {{ form.amount(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.term_months.label(class="form-control-label") }}
+                    {{ form.term_months(class="form-control") }}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+{% endblock content %}

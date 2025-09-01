@@ -25,7 +25,7 @@ def register():
         return redirect(url_for('main.dashboard'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(username=form.username.data, email=form.email.data)
+        user = User(username=form.username.data, email=form.email.data, phone_number=form.phone_number.data)
         user.set_password(form.password.data)
         db.session.add(user)
         account = Account(owner=user, account_type='Savings', balance=100.00)
